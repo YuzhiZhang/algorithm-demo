@@ -1,2 +1,2 @@
-# LeetCodeDemo
-Record the knowledge points in the learning leetcode process
+# algorithmDemo
+Record the knowledge points in the learning algorithm process

@@ -1,17 +1,17 @@
 {
-  "name": "leetcodeDemo",
+  "name": "algorithmDemo",
   "version": "1.0.0",
-  "description": "leetcodeDemo",
+  "description": "algorithmDemo",
   "main": "index.js",
   "scripts": {
     "test": "jest ./test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/YuzhiZhang/LeetCodeDemo.git"
+    "url": "https://github.com/YuzhiZhang/algorithmDemo.git"
   },
   "keywords": [
-    "leetcodeDemo"
+    "algorithmDemo"
   ],
   "license": "Apache-2.0",
   "dependencies": {
