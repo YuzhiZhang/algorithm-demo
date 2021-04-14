@@ -1,12 +1,19 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "pwa-chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node-terminal",
+      "name": "Run Script: test",
+      "request": "launch",
+      "command": "npm run test",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: FindKthLargest.test",
+      "request": "launch",
+      "command": "npm run test ./code/sorting/find-Kth-largest/FindKthLargest.test.js",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
 }
