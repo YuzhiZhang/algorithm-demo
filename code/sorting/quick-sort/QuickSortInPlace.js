@@ -13,29 +13,29 @@
  */
 export default (D) => {
   function partition(D, low, high) {
-    let i;
-    let j;
-    let s;
+    let left;
+    let right;
+    let pivot;
     while (high > low) {
-      i = low;
-      j = high;
-      s = D[low];
-      while (i < j) {
-        while (D[j] > s) {
-          j--;
+      left = low;
+      right = high;
+      pivot = D[low];
+      while (left < right) {
+        while (D[right] > pivot) {
+          right--;
         }
-        D[i] = D[j];
+        D[left] = D[right];
 
-        while (s >= D[i] && i < j) {
-          i++;
+        while (pivot >= D[left] && left < right) {
+          left++;
         }
-        D[j] = D[i];
+        D[right] = D[left];
       }
-      D[i] = s;
+      D[left] = pivot;
 
       // }
-      partition(D, low, i - 1);
-      low = i + 1;
+      partition(D, low, left - 1);
+      low = left + 1;
     }
   }
 
