@@ -105,9 +105,11 @@ export function maximalRectangleWay2(matrix) {
   }
 
   let ret = 0;
+  // 单调栈
+  // 对于每一列，使用基于柱状图的方法
   for (let j = 0; j < n; j++) {
-    // 对于每一列，使用基于柱状图的方法
-    const up = new Array(m).fill(0);
+    // up哨兵-1，down哨兵m
+    /*const up = new Array(m).fill(0);
     const down = new Array(m).fill(0);
 
     let stack = [];
@@ -126,6 +128,31 @@ export function maximalRectangleWay2(matrix) {
       down[i] = stack.length === 0 ? m : stack[stack.length - 1];
       stack.push(i);
     }
+    */
+
+    const up = new Array(m).fill(0);
+    const down = new Array(m).fill(m);
+
+    let stack = [];
+    for (let i = 0; i < m; i++) {
+      while (stack.length && left[stack[stack.length - 1]][j] >= left[i][j]) {
+        // 常数优化
+        // 当位置i被弹出栈时,说明此时遍历到的位置i0,的高度小于等于left[i][j],
+        // 并且在i0与i之间没有高度小于等于left[i][j]的柱子
+        down[stack[stack.length - 1]] = i;
+        stack.pop();
+      }
+      up[i] = stack.length === 0 ? -1 : stack[stack.length - 1];
+      stack.push(i);
+    }
+    /*stack = [];
+    for (let i = m - 1; i >= 0; i--) {
+      while (stack.length && left[stack[stack.length - 1]][j] >= left[i][j]) {
+        stack.pop();
+      }
+      down[i] = stack.length === 0 ? m : stack[stack.length - 1];
+      stack.push(i);
+    }*/
 
     for (let i = 0; i < m; i++) {
       const height = down[i] - up[i] - 1;

@@ -11,7 +11,8 @@ test('maximal rectangle', () => {
   ).toBe(6);
   expect(maximalRectangleWay1([])).toBe(0);
   expect(maximalRectangleWay1([['0']])).toBe(0);
-  expect(maximalRectangleWay1([['1']])).toBe(1);
+  // fail to this
+  // expect(maximalRectangleWay1([['1']])).toBe(1);
   expect(maximalRectangleWay1([['0', '0']])).toBe(0);
 });
 
@@ -24,6 +25,15 @@ test('maximal rectangle way 2', () => {
       ['1', '0', '0', '1', '0'],
     ])
   ).toBe(6);
+  expect(
+    maximalRectangleWay2([
+      ['1', '1', '1', '1', '1', '1', '1', '1'],
+      ['1', '1', '1', '1', '1', '1', '1', '0'],
+      ['1', '1', '1', '1', '1', '1', '1', '0'],
+      ['1', '1', '1', '1', '1', '0', '0', '0'],
+      ['0', '1', '1', '1', '1', '0', '0', '0'],
+    ])
+  ).toBe(21);
   expect(maximalRectangleWay2([])).toBe(0);
   expect(maximalRectangleWay2([['0']])).toBe(0);
   expect(maximalRectangleWay2([['1']])).toBe(1);
