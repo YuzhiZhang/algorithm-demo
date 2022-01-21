@@ -2,7 +2,8 @@
   "name": "algorithm-demo",
   "version": "1.0.0",
   "description": "algorithmDemo",
-  "main": "index.js",
+  "exports": "./index.js",
+  "type": "module",
   "engines": {
     "node": ">=16.13.0"
   },
@@ -28,7 +29,6 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^27.0.2",
     "babel-preset-env": "1.7.0",
-    "chalk": "^4.1.0",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-jest": "22.0.0",
@@ -37,6 +37,7 @@
     "husky": "^7.0.0",
     "jest": "^27.0.4",
     "lint-staged": "^12.2.1",
+    "picocolors": "^1.0.0",
     "prettier": "2.5.1"
   },
   "directories": {
